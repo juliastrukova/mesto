@@ -1,0 +1,7 @@
+.element__heart_button{
+  width: 22px;
+  height: 19px;
+  margin: 30px 30px 30px auto;
+  grid-row: 2; 
+  grid-column: 1;
+}

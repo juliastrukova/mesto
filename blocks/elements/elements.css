@@ -1,0 +1,14 @@
+.elements{
+  display: grid;
+  color: black;
+  list-style-type: none;
+  padding: 0;
+  margin-top: 47px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 17px;
+  grid-row-gap: 20px;
+  overflow: hidden;
+  max-width: 880px;
+  max-height: 744px;
+}

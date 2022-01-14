@@ -1,0 +1,27 @@
+.element__heart {
+  border: none;
+  outline: none;
+  display: block;
+  opacity: 1;
+  transition-duration: 2s;
+  background: url(../../../images/element/__vector.svg);
+}
+
+.element__heart:hover{
+  opacity: 0.5;
+  transition-duration: 2s;
+}
+
+/* .element__heart::before{ 
+  background-image: url(../../../images/element/__vector.svg);
+}
+
+
+
+.element__heart:active{ 
+  background-image: url(../../../images/element/__heart-active.svg)
+}
+
+.element__heart::after{ 
+  background-image: url(../../../images/element/__heart-active.svg)
+}*/

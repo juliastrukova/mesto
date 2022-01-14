@@ -13,31 +13,83 @@
   <!-- Шапка сайта, блок header -->
     <header class="header">
         <img src="images/header/__logo.svg" alt="логотип" class="header__logo">
-        <img src="images/header/__line.jpg" alt ="декоративная линия" class="header__line">
     </header>
     <!-- Основное содержимое страницы -->
     <main class="content">
         <!-- Профиль -->
         <section class="profile">
-            <img src="images/profile/__avatar.jpg" alt ="аватар профиля" class="profile__avatar">
+            <img src="images/profile/image.jpg" alt ="аватар профиля" class="profile__avatar">
             <div class="profile__info">
                 <h1 class="profile__name">Жак-Ив Кусто</h1>
                 <p class="profile__description">Исследователь океана</p>
-                <button type="button" class="profile__edit-button"></button>
-            </div>
-            <button type="button" class="profile__add-button"></button>
+                <button type="button" class="profile__edit-button button"></button>
+            </div>           
+            <button type="button" class="profile__add-button button"></button>
         </section>
         <!-- Элементы -->
-        <section class="elements-container">
-            <div class="element"></div>
-        </section>
+        <ul class="elements">
+            <!-- Карачаевск -->
+            <li>
+                <div class="elements-container">
+                    <img src="images/element/karachaevsk.jpg" alt="Карачаевск" class="element__image">
+                    <h2 class="element__title">Карачаевск</h2>
+                    <button id="buttonHeart1" class="button element__heart element__heart_button"></button> 
+                </div>
+            </li>
+            <!-- Гора Эльбрус -->
+            <li>
+                <div class="elements-container">
+                    <img src="images/element/gora-elbrus.jpg" alt="Гора Эльбрус" class="element__image">
+                    <h2 class="element__title">Гора Эльбрус</h2>
+                    <button id="buttonHeart2" class="button element__heart element__heart_button"></button> 
+                </div>
+            </li>
+            <!-- Домбай-->
+            <li>
+                <div class="elements-container">
+                    <img src="images/element/dombai.jpg" alt="Домбай" class="element__image">
+                    <h2 class="element__title">Домбай</h2>
+                    <button id="buttonHeart3" class="button element__heart element__heart_button"></button> 
+                </div>
+            </li>    
+            <!-- Гора Эльбрус -->
+            <li>
+                <div class="elements-container">
+                    <img src="images/element/gora-elbrus.jpg" alt="Гора Эльбрус" class="element__image">
+                    <h2 class="element__title">Гора Эльбрус</h2>
+                    <button id="buttonHeart4" class="button element__heart element__heart_button"></button> 
+                </div>
+            </li>    
+            <!-- Домбай -->
+            <li>
+                <div class="elements-container">
+                    <img src="images/element/dombai.jpg" alt="Домбай" class="element__image">
+                    <h2 class="element__title">Домбай</h2>
+                    <button id="buttonHeart5" class="button element__heart element__heart_button"></button> 
+                </div>
+            </li>    
+            <!-- Карачаево-Черкессия -->
+            <li>
+                <div class="elements-container">
+                    <img src="images/element/karachaevsk.jpg" alt="Карачаево-Черкессия" class="element__image">
+                    <h2 class="element__title">Карачаево-Черкессия</h2>
+                    <button id="buttonHeart6" class="button element__heart element__heart_button"></button> 
+                </div>
+            </li>
+        </ul>
     </main>
     <footer class="footer">
-        <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+        <p class="footer__copyright"> &copy; 2022 Mesto Russia</p>
     </footer>
-    <div class="popup">
+    <section class="popup">
+        <div class="popup__container popup_opened">
+            <h2 class="popup__edit-profile">Редактировать профиль</h2>
+            <p class="popup__edit-name"></p>
+            <p class="popup__edit-description"></p>
+            <button type="button" class="popup__button-save">Сохранить</button>
+        </div>
         <!-- Здесь будет Edit form -->
-    </div>
+    </section>
 </div>
 <script src="pages/index.js"></script>
 </body>

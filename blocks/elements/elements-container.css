@@ -1,0 +1,9 @@
+.elements-container{
+  min-height: 361px;
+  min-width: 282px;
+  background-color: white;
+  border-radius: 10px 10px 10px 10px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+}
