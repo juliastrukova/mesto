@@ -90,17 +90,14 @@
 
 
 (function () {
-
 	popupOpened.onclick = function () {
-
-			popupButton.classList.add('popup_opened');
-		
+		popupButton.classList.add('popup_opened');
 	}
 })();
 
 (function () {
 	popupClose.onclick = function () {
-	     popupButton.classList.remove('popup_opened');
+		popupButton.classList.remove('popup_opened');
 	}
 })();
 
