@@ -1,4 +1,3 @@
-
 (function () {
 	var flag = 0;
 	buttonHeart1.onclick = function () {
