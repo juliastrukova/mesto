@@ -1,0 +1,6 @@
+.card__like {
+  border: none;
+  outline: none;
+  display: block;
+  background: url(../../../../images/photo-grid/like.svg);
+}

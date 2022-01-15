@@ -2,12 +2,12 @@
 	var flag = 1;
 	buttonHeart1.onclick = function () {
 		if (flag == 0) { 
-  buttonHeart1.classList.add('element__heart');
-  buttonHeart1.classList.remove('element__heart-active');
+  buttonHeart1.classList.add('card__like');
+  buttonHeart1.classList.remove('card__like-active');
 			flag = 1;
 		} else {
-      buttonHeart1.classList.remove('element__heart');
-      buttonHeart1.classList.add('element__heart-active');
+      buttonHeart1.classList.remove('card__like');
+      buttonHeart1.classList.add('card__like-active');
 			flag = 0;
 		}
 	}
@@ -17,12 +17,12 @@
 	var flag = 1;
 	buttonHeart2.onclick = function () {
 		if (flag == 0) { 
-  buttonHeart2.classList.add('element__heart');
-  buttonHeart2.classList.remove('element__heart-active');
+  buttonHeart2.classList.add('card__like');
+  buttonHeart2.classList.remove('card__like-active');
 			flag = 1;
 		} else {
-      buttonHeart2.classList.remove('element__heart');
-      buttonHeart2.classList.add('element__heart-active');
+      buttonHeart2.classList.remove('card__like');
+      buttonHeart2.classList.add('card__like-active');
 			flag = 0;
 		}
 	}
@@ -32,12 +32,12 @@
 	var flag = 1;
 	buttonHeart3.onclick = function () {
 		if (flag == 0) { 
-  buttonHeart3.classList.add('element__heart');
-  buttonHeart3.classList.remove('element__heart-active');
+  buttonHeart3.classList.add('card__like');
+  buttonHeart3.classList.remove('card__like-active');
 			flag = 1;
 		} else {
-      buttonHeart3.classList.remove('element__heart');
-      buttonHeart3.classList.add('element__heart-active');
+      buttonHeart3.classList.remove('card__like');
+      buttonHeart3.classList.add('card__like-active');
 			flag = 0;
 		}
 	}
@@ -47,12 +47,12 @@
 	var flag = 1;
 	buttonHeart4.onclick = function () {
 		if (flag == 0) { 
-  buttonHeart4.classList.add('element__heart');
-  buttonHeart4.classList.remove('element__heart-active');
+  buttonHeart4.classList.add('card__like');
+  buttonHeart4.classList.remove('card__like-active');
 			flag = 1;
 		} else {
-      buttonHeart4.classList.remove('element__heart');
-      buttonHeart4.classList.add('element__heart-active');
+      buttonHeart4.classList.remove('card__like');
+      buttonHeart4.classList.add('card__like-active');
 			flag = 0;
 		}
 	}
@@ -62,12 +62,12 @@
 	var flag = 1;
 	buttonHeart5.onclick = function () {
 		if (flag == 0) { 
-  buttonHeart5.classList.add('element__heart');
-  buttonHeart5.classList.remove('element__heart-active');
+  buttonHeart5.classList.add('card__like');
+  buttonHeart5.classList.remove('card__like-active');
 			flag = 1;
 		} else {
-      buttonHeart5.classList.remove('element__heart');
-      buttonHeart5.classList.add('element__heart-active');
+      buttonHeart5.classList.remove('card__like');
+      buttonHeart5.classList.add('card__like-active');
 			flag = 0;
 		}
 	}
@@ -77,12 +77,12 @@
 	var flag = 1;
 	buttonHeart6.onclick = function () {
 		if (flag == 0) { 
-  buttonHeart6.classList.add('element__heart');
-  buttonHeart6.classList.remove('element__heart-active');
+  buttonHeart6.classList.add('card__like');
+  buttonHeart6.classList.remove('card__like-active');
 			flag = 1;
 		} else {
-      buttonHeart6.classList.remove('element__heart');
-      buttonHeart6.classList.add('element__heart-active');
+      buttonHeart6.classList.remove('card__like');
+      buttonHeart6.classList.add('card__like-active');
 			flag = 0;
 		}
 	}

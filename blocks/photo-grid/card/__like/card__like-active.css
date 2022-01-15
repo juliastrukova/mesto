@@ -1,0 +1,6 @@
+.card__like-active{
+  border: none;
+  outline: none;
+  display: block;
+  background-image: url(../../../../images/photo-grid/like-active.svg);
+}

@@ -1,8 +1,0 @@
-.element__heart-active{
-  border: none;
-  outline: none;
-  display: block;
-  opacity: 1;
-  transition-duration: 2s;
-  background-image: url(../../../images/element/__heart-active.svg);
-}
