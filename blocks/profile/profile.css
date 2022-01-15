@@ -4,3 +4,25 @@
   align-items: center;
   position: relative;
 }
+
+@media screen and (max-width: 950px) {
+  .profile{
+    width: 96%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .profile{
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .profile{
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+}

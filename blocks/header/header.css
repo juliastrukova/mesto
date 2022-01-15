@@ -4,3 +4,17 @@
   margin: 0 auto;
   border-bottom: 1px solid #545454;
 }
+
+@media screen and (max-width: 900px) {
+  .header{
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width:450px){
+  .header{
+    padding-top: 28px;
+    width: 100%;
+  }
+}

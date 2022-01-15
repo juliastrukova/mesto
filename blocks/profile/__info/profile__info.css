@@ -9,3 +9,11 @@
   grid-row-gap: 16px;
   align-items: end;
 }
+
+@media screen and (max-width: 450px) {
+    .profile__info{
+      max-width: 100%;
+      grid-row-gap: 14px;
+      grid-column-gap: 10px;
+    }
+}

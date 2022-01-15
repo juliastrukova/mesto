@@ -6,3 +6,10 @@
   display: grid;
   min-height: 330px;
 }
+
+@media screen and (max-width: 450px){
+    .popup__form{
+      width: 282px;
+      height: 322px;
+    }
+}
