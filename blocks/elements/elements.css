@@ -16,7 +16,7 @@
     max-width: 100%;
     padding-top: 36px;
   }
- } 
+} 
 
 @media screen and (max-width:800px) { 
   .elements{
@@ -24,12 +24,12 @@
     padding-top: 36px;
     margin: 0 auto;
   }
- } 
+} 
 
- @media screen and (max-width:450px) { 
+@media screen and (max-width:450px) { 
   .elements{
     max-width: 88%;
     padding-top: 36px;
     margin: 0 auto;
   }
- } 
+} 

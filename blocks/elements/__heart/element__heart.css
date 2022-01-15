@@ -2,14 +2,12 @@
   border: none;
   outline: none;
   display: block;
-  background: url(../../../images/element/__vector.svg);
+  background: url(../../../images/element/__heart.svg);
 }
 
 /* .element__heart::before{ 
-  background-image: url(../../../images/element/__vector.svg);
+  background-image: url(../../../images/element/__heartr.svg);
 }
-
-
 
 .element__heart:active{ 
   background-image: url(../../../images/element/__heart-active.svg)
