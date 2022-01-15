@@ -7,7 +7,7 @@
   grid-row: 1;
 }
 
-@media screen and (max-width:450px) {
+@media screen and (max-width:700px) {
   .profile__edit-button{
     width: 18px;
     height: 18px;
