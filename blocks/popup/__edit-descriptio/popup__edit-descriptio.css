@@ -1,2 +1,11 @@
 .popup__edit-description {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  border-bottom: 1px solid #545454;
+  box-sizing: border-box;
+  max-width: 358px;
+  padding: 0;
+  margin: 30px 36px 0 36px;
+  max-height: 27px;
 }

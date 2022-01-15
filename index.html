@@ -22,7 +22,7 @@
             <div class="profile__info">
                 <h1 class="profile__name">Жак-Ив Кусто</h1>
                 <p class="profile__description">Исследователь океана</p>
-                <button type="button" class="profile__edit-button button"></button>
+                <button id="popupOpened" class="profile__edit-button button"></button>
             </div>           
             <button type="button" class="profile__add-button button"></button>
         </section>
@@ -81,14 +81,17 @@
     <footer class="footer">
         <p class="footer__copyright"> &copy; 2022 Mesto Russia</p>
     </footer>
+    <!-- Попап -->
     <section class="popup">
-        <div class="popup__container popup_opened">
-            <h2 class="popup__edit-profile">Редактировать профиль</h2>
-            <p class="popup__edit-name"></p>
-            <p class="popup__edit-description"></p>
-            <button type="button" class="popup__button-save">Сохранить</button>
+        <div class="popup__container">
+            <button class="button popup__button-close"></button>
+            <form class="popup__form">
+                <h2 class="popup__edit-profile">Редактировать профиль</h2>
+                <p class="popup__edit-name">Жак-Ив Кусто</p>
+                <p class="popup__edit-description">Исследователь океана</p>
+                <button type="button" class="popup__button-save">Сохранить</button>
+            </form>
         </div>
-        <!-- Здесь будет Edit form -->
     </section>
 </div>
 <script src="pages/index.js"></script>

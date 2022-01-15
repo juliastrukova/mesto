@@ -1,2 +1,4 @@
 .popup__container {
+  max-width: 470px;
+  display: none;
 }

@@ -88,3 +88,19 @@
 		}
 	}
 })();
+
+// 	popupOpened
+(function () {
+	var flag = 0;
+	popupOpened.onclick = function () {
+		if (flag == 0) { 
+			popupOpened.classList.add('.popup_opened');
+			popupOpened.classList.remove('.popup__container');
+			flag = 1;
+		} else {
+      popupOpened.classList.remove('.popup_opened');
+      popupOpened.classList.add('.popup__container');
+			flag = 0;
+		}
+	}
+})();

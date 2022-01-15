@@ -6,4 +6,7 @@
   margin: 0 0 0 30px;
   grid-column: 1;
   grid-row: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
