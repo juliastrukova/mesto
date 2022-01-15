@@ -1,0 +1,13 @@
+.profile__edit{
+  background-image: url(../../../images/profile/edit_b.svg);
+  border: none;
+  background-color: black;
+  background-repeat: no-repeat;
+  opacity: 1;
+  transition-duration: 2s;
+}
+
+.profile__edit:hover{
+  opacity: 0.5;
+  transition-duration: 2s;
+}

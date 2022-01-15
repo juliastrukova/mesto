@@ -91,16 +91,31 @@
 
 
 (function () {
-	var flag = 0;
+
 	popupOpened.onclick = function () {
-		if (flag == 0) { 
-			popupOpened.classList.add('.popup_opened');
-			popupOpened.classList.remove('.popup__container');
-			flag = 1;
-		} else {
-      popupOpened.classList.remove('.popup_opened');
-      popupOpened.classList.add('.popup__container');
-			flag = 0;
-		}
+
+			popupButton.classList.add('popup_opened');
+		
+	}
+})();
+
+(function () {
+	popupClose.onclick = function () {
+	     popupButton.classList.remove('popup_opened');
+	}
+})();
+
+let formElement = document.querySelector('.popup__form')
+let nameInput = document.querySelector('.popup__edit-name')
+let descriptionInput = document.querySelector('.popup__edit-description')
+function formSubmitHandler (evt) {
+    evt.preventDefault();
+	profileName.textContent = nameInput.value;
+	profileDescription.textContent  = descriptionInput.value;
+}
+ formElement.addEventListener('submit', formSubmitHandler);
+ (function () {
+	buttonSave.onclick = function () {
+	     popupButton.classList.remove('popup_opened');
 	}
 })();

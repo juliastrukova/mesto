@@ -2,7 +2,8 @@
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  border-bottom: 1px solid #000000;
+  border: 0;
+  border-bottom: 1px solid black;
   box-sizing: border-box;
   max-width: 358px;
   padding: 0;

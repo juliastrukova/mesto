@@ -20,9 +20,9 @@
         <section class="profile">
             <img src="images/profile/image.jpg" alt ="аватар профиля" class="profile__avatar">
             <div class="profile__info">
-                <h1 class="profile__name">Жак-Ив Кусто</h1>
-                <p class="profile__description">Исследователь океана</p>
-                <button id="popupOpened" class="profile__edit-button button"></button>
+                <h1 id="profileName" class="profile__name">Жак-Ив Кусто</h1>
+                <p id="profileDescription" class="profile__description">Исследователь океана</p>
+                <button id="popupOpened" class="button profile__edit profile__edit-button"></button>
             </div>           
             <button type="button" class="profile__add-button button"></button>
         </section>
@@ -33,7 +33,7 @@
                 <div class="elements-container">
                     <img src="images/element/karachaevsk.jpg" alt="Карачаевск" class="element__image">
                     <h2 class="element__title">Карачаевск</h2>
-                    <button id="buttonHeart1" class="button element__heart element__heart_button"></button> 
+                    <button id="buttonHeart1" class="button element__heart element__heart_button" title="Реактировать профиль"></button> 
                 </div>
             </li>
             <!-- Гора Эльбрус -->
@@ -82,14 +82,14 @@
         <p class="footer__copyright"> &copy; 2022 Mesto Russia</p>
     </footer>
     <!-- Попап -->
-    <section class="popup">
+    <section id="popupButton" class="popup">
         <div class="popup__container">
-            <button class="button popup__button-close"></button>
+            <button id="popupClose" class="button popup__button-close"></button>
             <form class="popup__form">
                 <h2 class="popup__edit-profile">Редактировать профиль</h2>
-                <p class="popup__edit-name">Жак-Ив Кусто</p>
-                <p class="popup__edit-description">Исследователь океана</p>
-                <button type="button" class="popup__button-save">Сохранить</button>
+                <input required placeholder="Жак-Ив Кусто" class="popup__edit-name">
+                <input required  placeholder="Исследователь океана" class="popup__edit-description">
+                <button id="buttonSave" type="submit" class="popup__button-save button">Сохранить</button>
             </form>
         </div>
     </section>
