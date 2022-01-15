@@ -3,4 +3,5 @@
   outline: none;
   display: block;
   background-image: url(../../../../images/photo-grid/like-active.svg);
+  background-color: white;
 }
