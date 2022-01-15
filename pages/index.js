@@ -1,5 +1,5 @@
 (function () {
-	var flag = 0;
+	var flag = 1;
 	buttonHeart1.onclick = function () {
 		if (flag == 0) { 
   buttonHeart1.classList.add('element__heart');
@@ -14,7 +14,7 @@
 })();
 
 (function () {
-	var flag = 0;
+	var flag = 1;
 	buttonHeart2.onclick = function () {
 		if (flag == 0) { 
   buttonHeart2.classList.add('element__heart');
@@ -29,7 +29,7 @@
 })();
 
 (function () {
-	var flag = 0;
+	var flag = 1;
 	buttonHeart3.onclick = function () {
 		if (flag == 0) { 
   buttonHeart3.classList.add('element__heart');
@@ -44,7 +44,7 @@
 })();
 
 (function () {
-	var flag = 0;
+	var flag = 1;
 	buttonHeart4.onclick = function () {
 		if (flag == 0) { 
   buttonHeart4.classList.add('element__heart');
@@ -59,7 +59,7 @@
 })();
 
 (function () {
-	var flag = 0;
+	var flag = 1;
 	buttonHeart5.onclick = function () {
 		if (flag == 0) { 
   buttonHeart5.classList.add('element__heart');
@@ -74,7 +74,7 @@
 })();
 
 (function () {
-	var flag = 0;
+	var flag = 1;
 	buttonHeart6.onclick = function () {
 		if (flag == 0) { 
   buttonHeart6.classList.add('element__heart');
