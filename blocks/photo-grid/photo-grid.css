@@ -12,23 +12,20 @@
 
 @media screen and (max-width:950px) { 
   .photo-grid{
-    max-width: 100%;
-    padding-top: 36px;
-  }
-} 
-
-@media screen and (max-width:800px) { 
-  .photo-grid{
     max-width: 90%;
     padding-top: 36px;
     margin: 0 auto;
   }
 } 
 
+@media screen and (max-width:800px) { 
+  .photo-grid{
+    max-width: 90%;
+  }
+} 
+
 @media screen and (max-width:450px) { 
   .photo-grid{
     max-width: 88%;
-    padding-top: 36px;
-    margin: 0 auto;
   }
 } 

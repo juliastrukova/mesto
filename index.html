@@ -21,8 +21,8 @@
             <img src="images/profile/__avatar.jpg" alt ="аватар профиля" class="profile__avatar">
             <div class="profile__info">
                 <h1 id="profileName" class="profile__name">Жак-Ив Кусто</h1>
-                <p id="profileDescription" class="profile__description">Исследователь океана</p>
-                <button id="popupOpened" class="button profile__edit profile__edit-button"></button>
+                <p  id= "profileDescription" class="profile__description">Исследователь океана</p>
+                <button type="button" class="button profile__edit profile__edit-button"></button>
             </div>           
             <button type="button" class="profile__add-button button"></button>
         </section>
@@ -32,37 +32,37 @@
             <li class="card">
                 <img src="images/photo-grid/karachaevsk.jpg" alt="Карачаевск" class="card__image">
                 <h2 class="card__title">Карачаевск</h2>
-                <button id="buttonHeart1" class="button card__like card__like_button" title="Реактировать профиль"></button>
+                <button type="button" class="button card__like" title="Реактировать профиль"></button>
             </li>
             <!-- Гора Эльбрус -->
             <li class="card">
                 <img src="images/photo-grid/gora-elbrus.jpg" alt="Гора Эльбрус" class="card__image">
                 <h2 class="card__title">Гора Эльбрус</h2>
-                <button id="buttonHeart2" class="button card__like card__like_button"></button> 
+                <button type="button"" class="button card__like"></button> 
             </li>
             <!-- Домбай-->
             <li class="card">
                 <img src="images/photo-grid/dombai.jpg" alt="Домбай" class="card__image">
                 <h2 class="card__title">Домбай</h2>
-                <button id="buttonHeart3" class="button card__like card__like_button"></button> 
+                <button type="button" class="button card__like"></button> 
             </li>    
             <!-- Гора Эльбрус -->
             <li class="card">
                 <img src="images/photo-grid/gora-elbrus.jpg" alt="Гора Эльбрус" class="card__image">
                 <h2 class="card__title">Гора Эльбрус</h2>
-                <button id="buttonHeart4" class="button card__like card__like_button"></button> 
+                <button type="button" class="button card__like"></button> 
             </li>    
             <!-- Домбай -->
             <li class="card">
                 <img src="images/photo-grid/dombai.jpg" alt="Домбай" class="card__image">
                 <h2 class="card__title">Домбай</h2>
-                <button id="buttonHeart5" class="button card__like card__like_button"></button> 
+                <button type="button" class="button card__like"></button> 
             </li>    
             <!-- Карачаево-Черкессия -->
             <li class="card">
                 <img src="images/photo-grid/karachaevsk.jpg" alt="Карачаево-Черкессия" class="card__image">
                 <h2 class="card__title">Карачаево-Черкессия</h2>
-                <button id="buttonHeart6" class="button card__like card__like_button"></button> 
+                <button type="button" class="button card__like"></button> 
             </li>
         </ul>
     </main>
@@ -72,17 +72,17 @@
     <!-- Попап -->
     <section tabindex="0" id="popupButton" class="popup">
         <div class="popup__container">
-            <button tabindex="4" id="popupClose" class="button popup__button-close"></button>
-            <form class="popup__form">
+            <button tabindex="4" class="button popup__button-close"></button>
+            <form name="edit-profile" class="popup__form">
                 <h2 class="popup__edit-profile">Редактировать профиль</h2>
-                <input tabindex="1" required placeholder="Жак-Ив Кусто" class="popup__edit-name">
-                <input tabindex="2" required  placeholder="Исследователь океана" class="popup__edit-description">
-                <button tabindex="3" id="buttonSave" type="submit" class="popup__button-save button">Сохранить</button>
+                <input tabindex="1" id="name" name="name" required placeholder="Ваше имя" class="popup__edit-info">
+                <input tabindex="2" id="description" name="description" required  placeholder="Ваш род деятельности" class="popup__edit-info">
+                <button type="submit" tabindex="3" type="submit" class="popup__button-save button">Сохранить</button> 
             </form>
         </div>
     </section>
 </div>
-<script src="pages/index.js"></script>
+<script src="scripts/index.js"></script>
 </body>
 </html>
 

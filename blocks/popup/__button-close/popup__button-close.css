@@ -8,9 +8,14 @@
   border: none;
   position: relative;
   right: -430px;
+  transition-duration: 0s;
 }
 
-@media screen and (max-width:450px) {
+.popup__button-close:hover{
+  transition-duration: 0s;
+}
+
+@media screen and (max-width:550px) {
   .popup__button-close{
     right: -262px;
     width: 20px;

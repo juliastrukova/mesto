@@ -4,10 +4,11 @@
   border-radius: 10px;
   color: black;
   display: grid;
+  grid-row-gap: 30px;
   min-height: 330px;
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 550px){
   .popup__form{
     width: 282px;
     height: 322px;
