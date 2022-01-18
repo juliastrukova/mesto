@@ -5,27 +5,27 @@
   font-weight: normal;
   font-size: 18px;
   line-height: 22px;
-  margin: 18px 36px 37px 36px;
+  margin: 13px 36px 37px 36px;
   text-align: center;
   width: 358px;
   height: 50px;
   justify-content: center;
   padding: 0;
+  opacity: 1;
   transition-duration: 0s;
 }
 
 .popup__button-save:hover{
   transition-duration: 0s;
+  opacity: 0.8;
 }
 
 @media screen and (max-width:550px) {
   .popup__button-save{
-    font-weight: normal;
     font-size: 14px;
     line-height: 17px;
-    text-align: center;
     width: 238px;
     height: 46px;
-    margin: 15px auto 25px auto;
+    margin: 13px auto 23px auto;
   }
 }

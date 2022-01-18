@@ -22,7 +22,7 @@
             <div class="profile__info">
                 <h1 id="profileName" class="profile__name">Жак-Ив Кусто</h1>
                 <p  id= "profileDescription" class="profile__description">Исследователь океана</p>
-                <button type="button" class="button profile__edit profile__edit-button"></button>
+                <button type="button" class="button profile__edit-button"></button>
             </div>           
             <button type="button" class="profile__add-button button"></button>
         </section>
@@ -72,11 +72,11 @@
     <!-- Попап -->
     <section tabindex="0" id="popupButton" class="popup">
         <div class="popup__container">
-            <button tabindex="4" class="button popup__button-close"></button>
+            <button type="button" tabindex="4" class="button popup__button-close"></button>
             <form name="edit-profile" class="popup__form">
                 <h2 class="popup__edit-profile">Редактировать профиль</h2>
-                <input tabindex="1" id="name" name="name" required placeholder="Ваше имя" class="popup__edit-info">
-                <input tabindex="2" id="description" name="description" required  placeholder="Ваш род деятельности" class="popup__edit-info">
+                <input tabindex="1" id="name" name="name" value required placeholder="Ваше имя" class="popup__edit-info">
+                <input tabindex="2" id="description" name="description"value required  placeholder="Ваш род деятельности" class="popup__edit-info">
                 <button type="submit" tabindex="3" class="popup__button-save button">Сохранить</button> 
             </form>
         </div>
