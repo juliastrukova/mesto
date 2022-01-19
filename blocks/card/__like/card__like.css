@@ -18,6 +18,6 @@
 }
 
 .card__like:hover{
-opacity: 0.5;
-transition-duration: 2s;
+  opacity: 0.5;
+  transition-duration: 2s;
 }
