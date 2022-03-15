@@ -3,5 +3,5 @@
   border-radius: 10px 10px 10px 10px;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr min-content;
+  position: relative;
 }

@@ -1,0 +1,9 @@
+.popup__image-url{
+  background-position: center;
+  height: 75vh;
+  max-width: 75vw;
+  max-height: 800px;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+}

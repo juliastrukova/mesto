@@ -13,10 +13,6 @@
   transition-duration: 2s;
   }
 
-.card__like:active{
-  background-image: url(../../../images/photo-grid/like-active.svg);
-}
-
 .card__like:hover{
   opacity: 0.5;
   transition-duration: 2s;
