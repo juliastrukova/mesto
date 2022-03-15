@@ -56,6 +56,7 @@ const initialCards = [
 const createCard = (item) => {
   const newCard = template.content.querySelector('.card').cloneNode(true);
   newCard.querySelector('.card__title').textContent = item.name;
+  newCard.querySelector('.card__image').alt = item.name;
   newCard.querySelector('.card__image').src = item.link;
   const buttonDeleteCard = newCard.querySelector('.card__delete');
   const buttonLike = newCard.querySelector('.card__like');
