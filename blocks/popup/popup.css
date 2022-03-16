@@ -11,5 +11,6 @@
   position: fixed;
   width: 100%;
   visibility: hidden;
+  opacity: 0;
   transition: visibility .3s, opacity .3s;
 }
