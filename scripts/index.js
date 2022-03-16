@@ -24,8 +24,10 @@ const template = document.querySelector('.template'); // блок для кар�
 // ПОПАП ОТКРЫТИЯ ИЗОБРАЖЕНИЙ
 const popupImage = document.querySelector('.popup_image');
 const closeImageButton = popupImage.querySelector('.popup__button-close');
-const popupImageUrl = popupImage.querySelector('.popup__image-url');
-const popupImageName = popupImage.querySelector('.popup__image-name');
+const popupImageUrl = document.querySelector('.popup__image-url');
+const popupImageName = document.querySelector('.popup__image-name');
+
+// функуии открытия/закрытия попапа
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
@@ -47,29 +49,7 @@ function formSubmitHandler (evt) {
   profileDescription.textContent = descriptionInput.value;
   closePopup(popupUser);
 }
-
-// создание карточек
-const createCard = (item) => {
-  const newCard = template.content.querySelector('.card').cloneNode(true);
-  const cardImage = newCard.querySelector('.card__image');
-  newCard.querySelector('.card__title').textContent = item.name;
-  cardImage.alt = item.name;
-  cardImage.src = item.link;
-  popupImageUrl.src = item.link;
-  popupImageUrl.alt = item.name;
-  popupImageName.textContent = item.name;
-  const buttonDeleteCard = newCard.querySelector('.card__delete');
-  const buttonLike = newCard.querySelector('.card__like');
-  buttonDeleteCard.addEventListener('click', deleteCard);
-  buttonLike.addEventListener('click', likeCard);
-  cardImage.addEventListener('click', openPhoto);
-
-  newCard
-  .querySelector('.card__image')
-  .addEventListener('click', () => openPhoto(popupImage));
-  return newCard;
-};
-
+// функции внутри карточек
 function deleteCard(evt) {
   evt.target.closest('.card').remove();
 }
@@ -78,7 +58,27 @@ function likeCard(evt) {
   evt.target.classList.toggle('card__like-active');
 }
 
-function openPhoto(popupImage) {
+// создание карточек
+const createCard = (item) => {
+  const newCard = template.content.querySelector('.card').cloneNode(true);
+  const buttonDeleteCard = newCard.querySelector('.card__delete');
+  const buttonLike = newCard.querySelector('.card__like');
+  buttonDeleteCard.addEventListener('click', deleteCard);
+  buttonLike.addEventListener('click', likeCard);
+  const cardImage = newCard.querySelector('.card__image');
+  const cardName = newCard.querySelector('.card__title');
+  cardName.textContent = item.name;
+  cardImage.alt = item.name;
+  cardImage.src = item.link;
+  cardImage.addEventListener('click', () => openPhoto(item));
+  return newCard;
+};
+
+// функция открытия изображения
+function openPhoto(item) {
+  popupImageName.textContent = item.name;
+  popupImageUrl.alt = item.name;
+  popupImageUrl.src = item.link;
   openPopup(popupImage);
  }
 
@@ -91,9 +91,9 @@ initialCards.forEach(renderCard);
 function handleCardFormSubmit(evt) { 
   evt.preventDefault(); 
   renderCard(({ name: inputCardName.value, link: inputCardUrl.value }) );
+  closePopup(popupCard); 
   inputCardName.value = ''; 
   inputCardUrl.value = '';  
-  closePopup(popupCard); 
 };
 
 closeCardButton.addEventListener('click', () => closePopup(popupCard)); // закрывает попап добавления места
