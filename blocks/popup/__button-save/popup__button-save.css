@@ -5,7 +5,7 @@
   font-weight: normal;
   font-size: 18px;
   line-height: 22px;
-  margin: 13px 36px 37px 36px;
+  margin: auto 36px 36px 36px;
   text-align: center;
   width: 358px;
   height: 50px;
@@ -26,6 +26,6 @@
     line-height: 17px;
     width: 238px;
     height: 46px;
-    margin: 13px auto 23px auto;
+    margin: 15px 22px 25px 22px;
   }
 }

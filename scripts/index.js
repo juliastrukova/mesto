@@ -1,4 +1,4 @@
-const popup = document.querySelector('.popup'); // попап
+const popup = document.querySelectorAll('.popup'); // попап
 
 // ПОПАП РЕДАКТИРОВАНИЯ ПРОФИЛЯ
 const popupUser = document.querySelector('.popup_user'); // попап редактирования профиля
@@ -31,10 +31,12 @@ const popupImageName = document.querySelector('.popup__image-name');
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  closePopupESCEvent();
 }
   
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  closePopupESCRemoveEvent();
 }
 function openPopupProfile() {
   openPopup(popupUser);
@@ -92,9 +94,34 @@ function handleCardFormSubmit(evt) {
   evt.preventDefault(); 
   renderCard(({ name: inputCardName.value, link: inputCardUrl.value }) );
   closePopup(popupCard); 
-  inputCardName.value = ''; 
-  inputCardUrl.value = '';  
+  form.reset();
 };
+
+// закрытие попапа по клику за форму
+popup.forEach((popup) => {
+  popup.addEventListener('click', (evt) => {
+      if (evt.target.classList.contains('popup_opened')) {
+          closePopup(popup);
+      }
+  })
+});
+
+// закрытие попапа по esc
+function closePopupESC (evt) {
+  if (evt.key === 'Escape') {
+      const popupOpened = document.querySelector('.popup_opened');
+      closePopup(popupOpened);
+  }
+};
+
+function closePopupESCEvent() {
+  document.addEventListener('keydown', closePopupESC);
+};
+
+function closePopupESCRemoveEvent() {
+  document.removeEventListener('keydown', closePopupESC);
+};
+
 
 closeCardButton.addEventListener('click', () => closePopup(popupCard)); // закрывает попап добавления места
 addButton.addEventListener('click', () => openPopup(popupCard)); // открывает попап добавления места
@@ -102,4 +129,4 @@ openUserButton.addEventListener('click', openPopupProfile);
 closeUserButton.addEventListener('click', () => closePopup(popupUser));
 formElement.addEventListener('submit', formSubmitHandler);
 cardForm.addEventListener('submit', handleCardFormSubmit);
-closeImageButton.addEventListener('click', () => closePopup(popupImage)); 
+closeImageButton.addEventListener('click', () => closePopup(popupImage));
