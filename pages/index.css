@@ -41,7 +41,6 @@
 /* validate */
 @import url(../blocks/popup/__error/popup__error.css);
 @import url(../blocks/popup/__error/_visible/popup__error_visible.css);
-@import url(../blocks/popup/__button-save/_disabled/popup__button-save_disabled.css);
 @import url(../blocks/popup/__edit-info/_error/popup__edit-info_error.css);
 @import url(../blocks/popup/__field/popup__field.css);
 @import url(../blocks/popup/__form-set/popup__form-set.css);
