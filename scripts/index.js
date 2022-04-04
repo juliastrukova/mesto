@@ -1,6 +1,5 @@
 const popup = document.querySelectorAll('.popup'); // попап
 
-
 // ПОПАП РЕДАКТИРОВАНИЯ ПРОФИЛЯ
 const popupUser = document.querySelector('.popup_user'); // попап редактирования профиля
 const userButtonOpen = document.querySelector('.profile__edit-button'); //открытие попапа редактирования профиля 
@@ -14,7 +13,6 @@ const profileDescription = document.querySelector('.profile__description'); // �
 
 const nameError = document.getElementById('nameError'); // текст ошибки 
 const descriptionError = document.getElementById('descriptionError'); // текст ошибки 
-
 
 // ПОПАП ДЛЯ ДОБАВЛЕНИЯ КАРТОЧКИ
 const popupCard = document.querySelector('.popup_card'); // попап добавления карточки
@@ -42,10 +40,11 @@ function openPopup(popup) {
   buttonSaveCard.disabled = true;
   closePopupESCEvent();
 }
+
 // убирание ошибок в popup_user после закрытия
 function hideError() {
-  nameError.classList.remove('popup__error_visible');
-  descriptionError.classList.remove('popup__error_visible');
+  nameError.textContent = '';
+  descriptionError.textContent = '';
   nameInput.classList.remove('popup__edit-info_error');
   descriptionInput.classList.remove('popup__edit-info_error');
   buttonSaveUser.disabled = false;
@@ -70,6 +69,7 @@ function formSubmitHandler (evt) {
   profileDescription.textContent = descriptionInput.value;
   closePopup(popupUser);
 }
+
 // функции внутри карточек
 function deleteCard(evt) {
   evt.target.closest('.card').remove();
@@ -92,7 +92,7 @@ const createCard = (item) => {
   cardImage.alt = item.name;
   cardImage.src = item.link;
   cardImage.addEventListener('click', () => openPhoto(item));
-   return newCard;
+  return newCard;
 };
 
 // функция открытия изображения
@@ -119,9 +119,9 @@ function handleCardFormSubmit(evt) {
 // закрытие попапа по клику за форму
 popup.forEach((popup) => {
   popup.addEventListener('click', (evt) => {
-      if (evt.target.classList.contains('popup_opened')) {
-          closePopup(popup);
-      }
+    if (evt.target.classList.contains('popup_opened')) {
+        closePopup(popup);
+    }
   })
 });
 
@@ -140,7 +140,6 @@ function closePopupESCEvent() {
 function closePopupESCRemoveEvent() {
   document.removeEventListener('keydown', closePopupESC);
 };
-
 
 cardButtonClose.addEventListener('click', () => closePopup(popupCard)); // закрывает попап добавления места
 addButton.addEventListener('click', () => openPopup(popupCard)); // открывает попап добавления места
