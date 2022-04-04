@@ -1,5 +1,6 @@
 const popup = document.querySelectorAll('.popup'); // попап
 
+
 // ПОПАП РЕДАКТИРОВАНИЯ ПРОФИЛЯ
 const popupUser = document.querySelector('.popup_user'); // попап редактирования профиля
 const userButtonOpen = document.querySelector('.profile__edit-button'); //открытие попапа редактирования профиля 
@@ -11,6 +12,10 @@ const profile = document.querySelector('.profile'); // профиль
 const profileName = document.querySelector('.profile__name'); // место для имени профиля
 const profileDescription = document.querySelector('.profile__description'); // место для описания профиля
 
+const nameError = document.getElementById('nameError'); // текст ошибки 
+const descriptionError = document.getElementById('descriptionError'); // текст ошибки 
+
+
 // ПОПАП ДЛЯ ДОБАВЛЕНИЯ КАРТОЧКИ
 const popupCard = document.querySelector('.popup_card'); // попап добавления карточки
 const addButton = document.querySelector('.profile__add-button'); // кнопка для добавления карточки
@@ -18,6 +23,9 @@ const inputCardName = document.getElementById('cardName'); // название �
 const inputCardUrl = document.getElementById('cardUrl'); // ссылка в попапе
 const cardButtonClose = popupCard.querySelector('.popup__button-close'); // кнопка закрытия попапа редактирования карточки
 const cardForm = popupCard.querySelector('.popup__form'); // форма попапа в редактировании
+const buttonSaveCard = document.querySelector('.popup_card .popup__button-save'); //кнопка сохранения карточки
+const buttonSaveUser = document.querySelector('.popup_user .popup__button-save'); //кнопка сохранения карточки
+
 const cards = document.querySelector('.photo-grid'); // местро для карточек
 const template = document.querySelector('.template'); // блок для карточек
 
@@ -27,16 +35,26 @@ const imageButtonClose = popupImage.querySelector('.popup__button-close');
 const popupImageUrl = document.querySelector('.popup__image-url');
 const popupImageName = document.querySelector('.popup__image-name');
 
-// функуии открытия/закрытия попапа
+// функции открытия/закрытия попапа
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  buttonSaveCard.disabled = true;
   closePopupESCEvent();
 }
-  
+// убирание ошибок в popup_user после закрытия
+function hideError() {
+  nameError.classList.remove('popup__error_visible');
+  descriptionError.classList.remove('popup__error_visible');
+  nameInput.classList.remove('popup__edit-info_error');
+  descriptionInput.classList.remove('popup__edit-info_error');
+  buttonSaveUser.disabled = false;
+}
+
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   closePopupESCRemoveEvent();
+  hideError();
 }
 
 function openPopupProfile() {
@@ -74,7 +92,7 @@ const createCard = (item) => {
   cardImage.alt = item.name;
   cardImage.src = item.link;
   cardImage.addEventListener('click', () => openPhoto(item));
-  return newCard;
+   return newCard;
 };
 
 // функция открытия изображения
