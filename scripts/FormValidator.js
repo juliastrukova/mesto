@@ -35,25 +35,33 @@ _checkInputValidity = (inputElement) => {
   }
 };
 
-_hasInvalidInput () {
+_hasInvalidInput() {
   return this._inputList.some((input) => {
     return !input.validity.valid;
   })
 };
 
-setDefault (state) {
-  this._toggleButtonState (state);
+resetErrors () {
+  this.toggleButtonStateOff();
   this._inputList.forEach ( (inputElement) => {
   this._hideInputError (inputElement);
 });
 };
 
-_toggleButtonState (setDefault) {
-  const condition = typeof setDefault === 'undefined' ? !this._hasInvalidInput() : setDefault;
+toggleButtonStateOn() {
+  this._buttonElement.removeAttribute('disabled', '');
+};
+
+toggleButtonStateOff() {
+  this._buttonElement.setAttribute('disabled', '');
+};
+
+_toggleButtonState (resetErrors) {
+  const condition = typeof resetErrors === 'undefined' ? !this._hasInvalidInput() : resetErrors;
   if (condition) {
-    this._buttonElement.removeAttribute('disabled', '');
+    this.toggleButtonStateOn();
   } else {
-    this._buttonElement.setAttribute('disabled', '');
+    this.toggleButtonStateOff();
   }
 };
 

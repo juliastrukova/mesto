@@ -32,9 +32,10 @@ class Card {
   generateCard() {
     this._card = this._getTemplate();
     this._setEventListeners();
+    const cardImage = this._card.querySelector('.card__image');
     this._card.querySelector('.card__title').textContent = this._name;
-    this._card.querySelector('.card__image').src = this._link;
-    this._card.querySelector('.card__image').alt = this._name;
+    cardImage.src = this._link;
+    cardImage.alt = this._name;
     return this._card;
   }
 

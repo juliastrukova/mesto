@@ -36,30 +36,21 @@ const inputCardUrl = document.getElementById('cardUrl');
 // ПОПАП ОТКРЫТИЯ ИЗОБРАЖЕНИЙ
 const imageButtonClose = popupImage.querySelector('.popup__button-close');
 
-// валидация 
 
 // функции открытия/закрытия попапа
-
 export function openPopup(popup) {
   popup.classList.add('popup_opened');
-  buttonSaveCard.disabled = true;
+  validPopupUser.resetErrors(form);
+  validPopupCard.resetErrors(form);
   closePopupESCEvent();
-}
-
-// убирание ошибок в popup_user после закрытия
-function hideError() {
-  nameError.textContent = '';
-  descriptionError.textContent = '';
-  nameInput.classList.remove('popup__edit-info_error');
-  descriptionInput.classList.remove('popup__edit-info_error');
-  buttonSaveUser.disabled = false;
-}
+};
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   closePopupESCRemoveEvent();
-  hideError();
+  form.reset();
 }
+
 
 function openPopupProfile() {
   openPopup(popupUser);
@@ -68,7 +59,7 @@ function openPopupProfile() {
 }
 
 // функция сохранения формы в профиль
-function formSubmitHandler (evt) {
+function handleProfileFormSubmit (evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileDescription.textContent = descriptionInput.value;
@@ -100,7 +91,7 @@ function closePopupESCRemoveEvent() {
   document.removeEventListener('keydown', closePopupESC);
 };
 
-function hendleSubmit(evt) { 
+function handleAddCardFormSubmit(evt) { 
   evt.preventDefault();
   const nameValue = inputCardName.value;
   const srcValue = inputCardUrl.value;
@@ -108,6 +99,7 @@ function hendleSubmit(evt) {
   renderCard(nameValue, srcValue, altValue);
   closePopup(popupCard);
   form.reset();
+  validPopupCard.toggleButtonStateOff();
 }
 
 function createCard() {
@@ -119,6 +111,10 @@ function createCard() {
 function renderCard(name, link) {
   const card = new Card(name, link);
   const newCard = card.generateCard();
+  insertCard (newCard);
+}
+
+function insertCard (newCard){
   cards.prepend(newCard);
 }
 
@@ -132,7 +128,8 @@ cardButtonClose.addEventListener('click', () => closePopup(popupCard)); // за�
 addButton.addEventListener('click', () => openPopup(popupCard)); // открывает попап добавления места
 userButtonOpen.addEventListener('click', openPopupProfile);
 userButtonClose.addEventListener('click', () => closePopup(popupUser));
-formElement.addEventListener('submit', formSubmitHandler);
+formElement.addEventListener('submit', handleProfileFormSubmit);
 imageButtonClose.addEventListener('click', () => closePopup(popupImage));
-buttonSaveCard.addEventListener('click', hendleSubmit);
+buttonSaveCard.addEventListener('click', handleAddCardFormSubmit);
+
 createCard();
