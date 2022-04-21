@@ -2,7 +2,6 @@ import { Card} from './сards.js';
 import {initialCards, config} from './data.js';
 import {FormValidator} from  './FormValidator.js';
 
-
 const popup = document.querySelectorAll('.popup'); // попап
 
 // ПОПАП РЕДАКТИРОВАНИЯ ПРОФИЛЯ
@@ -51,7 +50,6 @@ function closePopup(popup) {
   form.reset();
 }
 
-
 function openPopupProfile() {
   openPopup(popupUser);
   nameInput.value = profileName.textContent;
@@ -98,8 +96,8 @@ function handleAddCardFormSubmit(evt) {
   const altValue = inputCardUrl.value;
   renderCard(nameValue, srcValue, altValue);
   closePopup(popupCard);
-  form.reset();
   validPopupCard.toggleButtonStateOff();
+  form.reset();
 }
 
 function createCard() {

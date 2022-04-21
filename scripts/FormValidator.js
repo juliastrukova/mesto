@@ -42,7 +42,7 @@ _hasInvalidInput() {
 };
 
 resetErrors () {
-  this.toggleButtonStateOff();
+  this._toggleButtonState();
   this._inputList.forEach ( (inputElement) => {
   this._hideInputError (inputElement);
 });
