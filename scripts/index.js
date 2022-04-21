@@ -96,7 +96,6 @@ function handleAddCardFormSubmit(evt) {
   const altValue = inputCardUrl.value;
   renderCard(nameValue, srcValue, altValue);
   closePopup(popupCard);
-  validPopupCard.toggleButtonStateOff();
   form.reset();
 }
 

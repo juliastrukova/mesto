@@ -48,20 +48,20 @@ resetErrors () {
 });
 };
 
-toggleButtonStateOn() {
+_toggleButtonStateOn() {
   this._buttonElement.removeAttribute('disabled', '');
 };
 
-toggleButtonStateOff() {
+_toggleButtonStateOff() {
   this._buttonElement.setAttribute('disabled', '');
 };
 
 _toggleButtonState (resetErrors) {
   const condition = typeof resetErrors === 'undefined' ? !this._hasInvalidInput() : resetErrors;
   if (condition) {
-    this.toggleButtonStateOn();
+    this._toggleButtonStateOn();
   } else {
-    this.toggleButtonStateOff();
+    this._toggleButtonStateOff();
   }
 };
 
