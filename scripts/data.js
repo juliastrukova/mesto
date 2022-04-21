@@ -1,14 +1,3 @@
-
-// config
-const validationList = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__edit-info',
-  submitButtonSelector: '.popup__button-save',
-  inputErrorClass: 'popup__edit-info_error',
-  errorClass: '.popup__error_visible',
-  formSet: '.popup__form-set'
-}
-
 // базовые карточки
 const initialCards = [
   {
@@ -36,6 +25,8 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
+
+// config
 const config = {
   formSelector: '.popup__form',
   inputSelector: '.popup__edit-info',
