@@ -39,21 +39,25 @@ const imageButtonClose = popupImage.querySelector('.popup__button-close');
 // функции открытия/закрытия попапа
 export function openPopup(popup) {
   popup.classList.add('popup_opened');
-  validPopupUser.resetErrors(form);
-  validPopupCard.resetErrors(form);
   closePopupESCEvent();
 };
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   closePopupESCRemoveEvent();
-  form.reset();
 }
 
 function openPopupProfile() {
   openPopup(popupUser);
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
+  validPopupUser.resetErrors(form);
+}
+
+function openPopupCard() {
+  openPopup(popupCard);
+  form.reset();
+  validPopupCard.resetErrors(form);
 }
 
 // функция сохранения формы в профиль
@@ -62,6 +66,7 @@ function handleProfileFormSubmit (evt) {
   profileName.textContent = nameInput.value;
   profileDescription.textContent = descriptionInput.value;
   closePopup(popupUser);
+  
 }
 
 // закрытие попапа по клику за форму
@@ -89,31 +94,26 @@ function closePopupESCRemoveEvent() {
   document.removeEventListener('keydown', closePopupESC);
 };
 
-function handleAddCardFormSubmit(evt) { 
+function handleAddCardFormSubmit(evt) {
   evt.preventDefault();
   const nameValue = inputCardName.value;
   const srcValue = inputCardUrl.value;
   const altValue = inputCardUrl.value;
   renderCard(nameValue, srcValue, altValue);
   closePopup(popupCard);
-  form.reset();
 }
 
-function createCard() {
-  initialCards.forEach((item) => {
-    renderCard(item.name, item.link);
-  });
-}
+function createCard(name, link) { 
+  const card = new Card(name, link); 
+  const newCard = card.generateCard(); 
+  return newCard; 
+} 
 
-function renderCard(name, link) {
-  const card = new Card(name, link);
-  const newCard = card.generateCard();
-  insertCard (newCard);
-}
+function renderCard (name, link){ 
+  cards.prepend(createCard(name, link)); 
+} 
 
-function insertCard (newCard){
-  cards.prepend(newCard);
-}
+initialCards.forEach(item => renderCard(item.name, item.link));
 
 const validPopupUser = new FormValidator(config, popupUser);
 validPopupUser.enableValidation();
@@ -122,11 +122,9 @@ const validPopupCard = new FormValidator(config, popupCard);
 validPopupCard.enableValidation();
 
 cardButtonClose.addEventListener('click', () => closePopup(popupCard)); // закрывает попап добавления места
-addButton.addEventListener('click', () => openPopup(popupCard)); // открывает попап добавления места
+addButton.addEventListener('click', () => openPopupCard()); // открывает попап добавления места
 userButtonOpen.addEventListener('click', openPopupProfile);
 userButtonClose.addEventListener('click', () => closePopup(popupUser));
 formElement.addEventListener('submit', handleProfileFormSubmit);
 imageButtonClose.addEventListener('click', () => closePopup(popupImage));
 buttonSaveCard.addEventListener('click', handleAddCardFormSubmit);
-
-createCard();
