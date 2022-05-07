@@ -1,19 +1,18 @@
-export class UserInfo {
-  constructor({ name: profileName, info: profileInfo }) {
-    this._profileName = document.querySelector(profileName)
-    this._profileInfo = document.querySelector(profileInfo)
+export default class UserInfo {
+  constructor({ profileName, profileInfo }) {
+    this._profileName = document.querySelector(profileName);
+    this._profileInfo = document.querySelector(profileInfo);
   }
 
   getUserInfo() {
-    const dataUser = {
+    return  {
       name: this._profileName.textContent,
-      info: this._profileInfo.textContent,
-    }
-    return dataUser
+      description: this._profileInfo.textContent,
+    };
   }
 
-  setUserInfo({ name, info }) {
+  setUserInfo({name, description}) {
     this._profileName.textContent = name;
-    this._profileInfo.textContent = info;
+    this._profileInfo.textContent = description;
   }
 } 

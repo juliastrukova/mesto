@@ -1,5 +1,19 @@
+// константы
+const popupCard = document.querySelector('.popup_card');
+const popupUser = document.querySelector('.popup_user');
+const userButtonEdit = document.querySelector('.profile__edit-button');
+const nameInput = document.getElementById('name');
+const infoInput = document.getElementById('description');
+const cardName = document.getElementById('cardName');
+const cardUrl = document.getElementById('cardUrl');
+const formElement = document.querySelector('.popup__form');
+const addButton = document.querySelector('.profile__add-button');
+const containerSelector = document.querySelector('.photo-grid');
+const cardTemplate = '#template';
+
+
 // базовые карточки
-const initialCards = [
+const items = [
   {
     name: 'Архыз',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -36,4 +50,4 @@ const config = {
   formSet: '.popup__form-set'
 };
 
-export {initialCards, config};
+export {items, config, popupCard, popupUser, userButtonEdit, nameInput, infoInput, formElement, addButton, containerSelector, cardUrl, cardName, cardTemplate};

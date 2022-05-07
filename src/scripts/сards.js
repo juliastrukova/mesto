@@ -1,4 +1,4 @@
-export class Card {
+export default class Card {
   constructor({data, handleCardClick}) {
     this._name = data.name;
     this._link = data.link;
@@ -30,7 +30,7 @@ export class Card {
   }
 
   _setEventListeners() {
-    this._card.querySelector('.card__image').addEventListener('click', () => {this._handleCardClick(this._name, this._link)});
+    this._card.querySelector('.card__image').addEventListener('click', () => this._handleCardClick({name: this._name, link: this._link}));
     this._card.querySelector('.card__like').addEventListener('click', (evt) => { this._likeCard(evt)});
     this._card.querySelector('.card__delete').addEventListener('click', (evt) => { this._deleteCard(evt)});
   }
