@@ -1,5 +1,5 @@
 import '../pages/index.css';
-import Card from './сards.js';
+import Card from '../components/сards.js';
 import { 
   items,
   config,
@@ -14,13 +14,13 @@ import {
   cardUrl,
   cardName,
   cardTemplate
-} from './data.js';
-import FormValidator from  './FormValidator.js';
-import  Section  from './Section.js';
-import  Popup  from './Popup.js';
-import PopupWithForm from './PopupWithForm.js';
-import PopupWithImage from './PopupWithImage.js';
-import UserInfo from './UserInfo.js';
+} from '../components/data.js';
+import FormValidator from  '../components/FormValidator.js';
+import  Section  from '../components/Section.js';
+import  Popup  from '../components/Popup.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import UserInfo from '../components/UserInfo.js';
 import { data } from 'autoprefixer';
 
 //валидация карточки

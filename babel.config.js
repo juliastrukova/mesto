@@ -1,5 +1,6 @@
 const presets = [
-  ['@babel/preset-env', {
+  ["@babel/preset-env",
+   {
     targets: {
       edge: '17',
       ie: '11',
@@ -11,5 +12,8 @@ const presets = [
     useBuiltIns: "entry"
   }]
 ];
-
+const plugins = [
+  ["@babel/transform-runtime"]
+]
 module.exports = { presets };
+module.exports = { plugins };
