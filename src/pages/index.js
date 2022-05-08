@@ -1,5 +1,5 @@
 import '../pages/index.css';
-import Card from '../components/сards.js';
+import Card from '../components/Card.js';
 import { 
   items,
   config,
