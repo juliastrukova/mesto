@@ -13,8 +13,8 @@ import {
   containerSelector,
   cardUrl,
   cardName,
-  cardTemplate
-} from '../components/data.js';
+  cardSelector
+} from '../utils/data.js';
 import FormValidator from  '../components/FormValidator.js';
 import  Section  from '../components/Section.js';
 import  Popup  from '../components/Popup.js';
@@ -33,17 +33,17 @@ validPopupUser.enableValidation();
 
 //открытие изображений
 const popupWithImage = new PopupWithImage({popupSelector: '.popup_image'});
+popupWithImage.setEventListeners();
 
 const handleCardClick = (data) => {
   popupWithImage.open(data);
-  popupWithImage.setEventListeners();
 }
 
 // карточки
 const popupWithFormAdd  = new PopupWithForm({popupSelector:'.popup_card'},(data)  => {
   const newdata = {
-    name: cardName.value,
-    link: cardUrl.value
+    name: data.cardName,
+    link: data.cardUrl
 };
   handleAddCardFormSubmit(newdata);
   popupWithFormAdd.close();
@@ -66,7 +66,7 @@ function createCard(item) {
   const newCard = new Card({
     data: item,
     handleCardClick
-  }, cardTemplate);
+  }, cardSelector);
   const cardElement = newCard.generateCard();
   return cardElement
 }
@@ -74,8 +74,7 @@ function createCard(item) {
 const cardList = new Section({
   items: items,
   renderer: (item) => {
-    const cardElement = createCard(item);
-    cardList.addItem(cardElement);
+    handleAddCardFormSubmit(item);
   }
 }, containerSelector);
 
@@ -83,8 +82,8 @@ cardList.renderItems();
 
 // пользователь
 const userInfo = new UserInfo({
-  profileName: '.profile__name',
-  profileInfo:  '.profile__description',
+  profileNameSelector: '.profile__name',
+  profileInfoSelector:  '.profile__description',
 });
 
 const popupWithFormEdit = new PopupWithForm ({popupSelector: '.popup_user'}, ({name, description}) => {
@@ -94,8 +93,9 @@ const popupWithFormEdit = new PopupWithForm ({popupSelector: '.popup_user'}, ({n
 popupWithFormEdit.setEventListeners();
 
 userButtonEdit.addEventListener('click', () => {
-  nameInput.value = userInfo.getUserInfo().name;
-  infoInput.value = userInfo.getUserInfo().description; 
+  const userData = userInfo.getUserInfo();
+  nameInput.value = userData.name;
+  infoInput.value = userData.description; 
   validPopupUser.resetErrors();
   popupWithFormEdit.open();
 });

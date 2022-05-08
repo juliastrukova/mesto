@@ -8,8 +8,8 @@ const cardName = document.getElementById('cardName');
 const cardUrl = document.getElementById('cardUrl');
 const formElement = document.querySelector('.popup__form');
 const addButton = document.querySelector('.profile__add-button');
-const containerSelector = document.querySelector('.photo-grid');
-const cardTemplate = '#template';
+const containerSelector = '.photo-grid';
+const cardSelector = '.template';
 
 
 // базовые карточки
@@ -50,4 +50,4 @@ const config = {
   formSet: '.popup__form-set'
 };
 
-export {items, config, popupCard, popupUser, userButtonEdit, nameInput, infoInput, formElement, addButton, containerSelector, cardUrl, cardName, cardTemplate};
+export {items, config, popupCard, popupUser, userButtonEdit, nameInput, infoInput, formElement, addButton, containerSelector, cardUrl, cardName, cardSelector};

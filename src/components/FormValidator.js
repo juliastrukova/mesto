@@ -8,8 +8,6 @@ export default class FormValidator {
     this._formSet = config.formSet;
     this._formElement = formElement;
     this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
-    this._formList = Array.from(document.querySelectorAll(this._formSelector));
-    this._fieldsetList = Array.from(formElement.querySelectorAll(this._formSet));
     this._buttonElement = this._formElement.querySelector(this._submitButtonSelector);
   }
 
@@ -48,7 +46,7 @@ resetErrors () {
 });
 };
 
-_toggleButtonState (resetErrors) {
+_toggleButtonState () {
   const condition = typeof resetErrors === 'undefined' ? !this._hasInvalidInput() : resetErrors;
   if (condition) {
     this._buttonElement.removeAttribute('disabled', '');
