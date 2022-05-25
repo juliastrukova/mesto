@@ -17,10 +17,13 @@
     <main class="content">
         <!-- Профиль -->
         <section class="profile">
-            <img src="<%=require('./images/profile/__avatar.jpg')%>" alt ="аватар профиля" class="profile__avatar">
+            <div class="profile__avatar-container">
+                <button type="button" class="button profile__avatar-button"></button>
+                <img id="profileAvatar" src=" " alt="аватар профиля" class="profile__avatar">
+            </div>
             <div class="profile__info">
                 <h1 id="profileName" class="profile__name">Жак-Ив Кусто</h1>
-                <p  id= "profileDescription" class="profile__description">Исследователь океана</p>
+                <p  id= "profileAbout" class="profile__description">Исследователь океана</p>
                 <button type="button" class="button profile__edit-button"></button>
             </div>           
             <button type="button" class="button profile__add-button"></button>
@@ -44,14 +47,30 @@
                         <span id="nameError" class="popup__error popup__error_visible"></span>
                     </label>
                     <label class="popup__field">
-                        <input tabindex="2" id="description" type="text" name="description" minlength="2" maxlength="200" value required  placeholder="Ваш род деятельности" class="popup__edit-info">
-                        <span id="descriptionError" class="popup__error popup__error_visible"></span>
+                        <input tabindex="2" id="about" type="text" name="about" minlength="2" maxlength="200" value required  placeholder="Ваш род деятельности" class="popup__edit-info">
+                        <span id="aboutError" class="popup__error popup__error_visible"></span>
                     </label>
                     <button type="submit" tabindex="3" class="popup__button-save button">Сохранить</button>
                 </fieldset>
             </form>
         </div>
     </section>
+    <!-- Попап редактирования изображения профиля -->
+    <section class="popup popup_avatar" id="popupAvatar">
+        <div class="popup__container">
+            <button type="button" tabindex="3" class="button popup__button-close"></button>
+            <form class="popup__form" name="form" novalidate>
+                <h2 class="popup__edit-profile">Обновить аватар</h2>
+                <fieldset class="popup__form-set">
+                <label class="popup__field">
+                    <input tabindex="1" name="avatarUrl" type="url" id="avatarUrl" value required placeholder="Ссылка на картинку" class="popup__edit-info">
+                    <span id="avatarError" class="popup__error popup__error_visible">ррр</span>
+                </label>
+                <button type="submit" tabindex="2" class="popup__button-save button" value="Сохранить">Сохранить</button>
+            </fieldset>
+            </form>
+        </div>
+      </section>
     <!-- Попап добавления карточки -->
     <section tabindex="0" id="popupCard" class="popup popup_card">
         <div class="popup__container">
@@ -60,11 +79,11 @@
                 <h2 class="popup__edit-profile">Новое место</h2>
                 <fieldset class="popup__form-set">
                     <label class="popup__field">
-                        <input tabindex="1" id="cardName" name="card-name" type="text" minlength="2" maxlength="30" value required placeholder="Название" class="popup__edit-info">
+                        <input tabindex="1" id="cardName" name="cardName" type="text" minlength="2" maxlength="30" value required placeholder="Название" class="popup__edit-info">
                         <span id="cardNameError" class="popup__error popup__error_visible"></span>
                     </label>
                     <label class="popup__field">
-                        <input tabindex="2" id="cardUrl" name="card-url" type="url" value required  placeholder="Ссылка на картинку" class="popup__edit-info">
+                        <input tabindex="2" id="cardUrl" name="cardUrl" type="url" value required  placeholder="Ссылка на картинку" class="popup__edit-info">
                         <span id="cardUrlError" class="popup__error popup__error_visible"></span>
                     </label>
                     <button type="submit" tabindex="3" class="popup__button-save button" disabled>Создать</button>
@@ -72,6 +91,16 @@
             </form>
         </div>
     </section>
+    <!-- Попап удаления карточки -->
+    <section id="popupDelete" class="popup popup_delete">
+        <div class="popup__container">
+            <button type="button" tabindex="4" class="button popup__button-close"></button>
+            <form class="popup__form" name="popup_delete">
+                <h2 class="popup__edit-profile">Вы уверены?</h2>
+                <button tabindex="1" class="popup__button-save button" type="submit">Да</button>
+            </form>
+        </div>    
+      </section>
     <!-- Попап открытия изображений -->
     <section id="popupImage" class="popup popup_image">
         <div class="popup__container-image">
@@ -89,7 +118,10 @@
             <button type="button" class="button card__delete"></button>
             <img class="card__image" alt="_" src="_">
             <h2 class="card__title"></h2>
-            <button type="button" class="button card__like"></button>
+            <div class="card__like-container">
+                <button type="button" class="button card__like"></button>
+                <p class="card__like-number">0</p>
+            </div>
         </div>
     </template>
 </body>
