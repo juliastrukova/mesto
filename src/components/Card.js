@@ -40,7 +40,7 @@ export default class Card {
     };
     this._setEventListeners();
     if (this._userIdPhoto !== this._userId) {
-      this._card.querySelector('.card__delete').remove();
+      this._buttonDelete.remove();
     };
     return this._card;
   }

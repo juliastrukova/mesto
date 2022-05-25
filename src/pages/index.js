@@ -29,7 +29,7 @@ import UserInfo from '../components/UserInfo.js';
 import { data } from 'autoprefixer';
 
 let userId;
-let createCard;
+let cardSection;
 
 // Api
 const api = new Api({
@@ -42,23 +42,20 @@ const api = new Api({
 
 Promise.all([api.getInitialCards(), api.getInitialUser()])
   .then(([initialCards, intialUser]) => {
-    createCard = new Section(
+    cardSection = new Section(
       {
         items: initialCards,
         renderer: renderCard
       },
       containerSelector
     );
-
     userInfo.setUserInfo({name: intialUser.name, about: intialUser.about, avatar: intialUser.avatar});
     userId = intialUser._id;
-
-    createCard.renderItems();
+    cardSection.renderItems();
   })
   .catch((err) => {
     console.log(err);
   });
-
 
 //валидация
 const validPopupCard = new FormValidator(config, popupCard);
@@ -97,7 +94,7 @@ const popupWithFormAdd = new PopupWithForm({popupSelector:'.popup_card'}, (data)
   popupWithFormAdd.renderLoading(true);
   api.addCard(data)
     .then((res) => {
-      createCard.addItem(renderCard(res));
+      cardSection.addItem(renderCard(res));
       popupWithFormAdd.close();
     })
     .catch((err) => {
@@ -121,12 +118,11 @@ const userInfo = new UserInfo({
   avatar: avatarLink
 });
 
-
 const popupWithFormEdit = new PopupWithForm({popupSelector: '.popup_user'}, (data) => {
   popupWithFormEdit.renderLoading(true);
   api.setUser(data.name, data.about)
     .then((res) => {
-      userInfo.setUserInfo({name: res.name, about: res.about, avatar: res.avatarUrl});
+      userInfo.setUserInfo({name: res.name, about: res.about, avatar: res.avatar});
       popupWithFormEdit.close();
     })
     .catch((err) => {
@@ -139,9 +135,7 @@ const popupWithFormEdit = new PopupWithForm({popupSelector: '.popup_user'}, (dat
 popupWithFormEdit.setEventListeners();
 
 userButtonEdit.addEventListener('click', () => {
-  const userData = userInfo.getUserInfo();
-  nameInput.value = userData.name;
-  infoInput.value = userData.about; 
+  popupWithFormEdit.setInputValues(userInfo.getUserInfo());
   validPopupUser.resetErrors();
   popupWithFormEdit.open();
 });
@@ -151,7 +145,7 @@ const popupEditAvatar = new PopupWithForm({popupSelector:'.popup_avatar'},  (dat
   popupEditAvatar.renderLoading(true);
   api.setAvatar(data.avatarUrl)
     .then((res) => {
-      userInfo.setUserInfo({name: res.name, about: res.about, avatar: res.avatarUrl});
+      userInfo.setUserInfo({name: res.name, about: res.about, avatar: res.avatar});
       popupEditAvatar.close();
     })
     .catch((err) => {
@@ -167,3 +161,5 @@ buttonEditAvatar.addEventListener('click', () => {
   validPopupAvatar.resetErrors();
   popupEditAvatar.open();
 });
+
+// идеи по улучшению коду поняла, воспользуюсь ими при переписывании кода на реакт :) Спасибо!
